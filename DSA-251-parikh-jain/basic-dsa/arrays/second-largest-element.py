@@ -1,3 +1,8 @@
+'''
+Time complexity: O(n)
+Space complexity: O(1)
+'''
+
 def find_second_largest(arr: list):
     if len(arr) < 2:
         return -1
