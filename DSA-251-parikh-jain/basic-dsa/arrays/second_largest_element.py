@@ -5,7 +5,7 @@ Space complexity: O(1)
 
 def find_second_largest(arr: list):
     if len(arr) < 2:
-        return -1
+        return None
     
     # Initializing with -ve infinity 
     largest = float('-inf')
@@ -19,7 +19,7 @@ def find_second_largest(arr: list):
             second_largest = number
 
     if second_largest == float('-inf'):
-        return -1
+        return None
     return second_largest
 
 
