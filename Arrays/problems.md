@@ -116,4 +116,53 @@ def secondLargestElement(arr):
         return secondLargest
 ```
 
-# 
+# Move all zeroes to end of array
+
+- Given an array of random numbers, Push all the zero’s of a given array to the end of the array.
+
+- Expected time complexity is O(n) and extra space is O(1).
+
+## Example
+
+```
+Input :  arr[] = {1, 2, 0, 4, 3, 0, 5, 0};
+Output : arr[] = {1, 2, 4, 3, 5, 0, 0, 0};
+
+Input : arr[]  = {1, 2, 0, 0, 0, 3, 6};
+Output : arr[] = {1, 2, 3, 6, 0, 0, 0};
+```
+
+# Explanation of algorithm
+
+- Consider grouping non-zero elements first and then adding 0s at the end of the array.
+
+- Create a variable count = 0 which will get incremented when we get any non-zero element.
+
+- Traverse through the array and at every element check if the current element is a non-zero element.
+
+- If yes, then update arr[count] with current element and increment the count with 1.
+
+- Once the entire array is traversed, the array will not have any 0s.
+
+- Now loop from count to array length and at every arr[count], insert 0 and increment count.
+
+## Complexity
+
+- Time complexity - O(n)
+
+- Space complexity - O(1)
+
+## Solution
+
+```python
+def push_zero_to_end(arr):
+    count = 0
+    for i in range(0, len(arr)):
+        if arr[i] != 0:
+            arr[count] = arr[i]
+            count += 1
+
+    while count < len(arr):
+        arr[count] = 0
+        count += 1
+```
